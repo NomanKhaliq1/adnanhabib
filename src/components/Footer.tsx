@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUp, ArrowRight, Check } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 
@@ -25,20 +24,42 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative z-20 bg-[#141413] text-[#FFFFFF] pt-20 pb-12 border-t border-[#292524]">
+    <footer className="relative z-20 bg-[#141413] text-[#FFFFFF] pt-14 sm:pt-16 lg:pt-20 pb-8 sm:pb-10 border-t border-[#292524] overflow-hidden">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative mb-14 sm:mb-16 p-6 sm:p-8 lg:p-10 rounded-[24px] sm:rounded-[30px] border border-[#3E3835] bg-[#1C1A18] overflow-hidden">
+          <div className="absolute -right-16 -top-20 w-64 h-64 rounded-full bg-[#C59A62]/12 blur-[80px] pointer-events-none" />
+          <div className="relative flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10">
+            <div className="max-w-2xl">
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#C59A62]">
+                Direct senior consultation
+              </span>
+              <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                Have a business challenge that needs experienced execution?
+              </h2>
+            </div>
+            <Link
+              href="/#contact"
+              className="group inline-flex w-full md:w-auto shrink-0 items-center justify-between md:justify-center gap-5 rounded-2xl bg-[#C59A62] hover:bg-[#D0A66D] px-5 py-4 text-sm font-bold text-[#141413] transition-colors"
+            >
+              <span>Start a Conversation</span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#141413] text-white">
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </span>
+            </Link>
+          </div>
+        </div>
         
         {/* 4-Column Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-[#292524]">
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-6 gap-y-10 sm:gap-x-10 lg:gap-12 pb-12 sm:pb-16 border-b border-[#292524]">
           
           {/* Column 1 — Brand with Official White Logo (4 cols) */}
-          <div className="lg:col-span-4 space-y-5">
+          <div className="col-span-2 lg:col-span-4 space-y-4">
             <Link href="/" className="inline-block group">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/logo-white.png"
                 alt="Adnan Habib"
-                className="h-16 sm:h-20 md:h-22 w-auto max-w-[280px] sm:max-w-[340px] object-contain object-left group-hover:scale-[1.02] transition-transform duration-200"
+                className="h-11 sm:h-13 lg:h-15 w-auto max-w-[220px] sm:max-w-[270px] object-contain object-left group-hover:scale-[1.02] transition-transform duration-200"
               />
             </Link>
             <p className="text-xs sm:text-sm text-[#A9A69F] font-normal leading-relaxed max-w-sm">
@@ -50,7 +71,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2 — Navigation (2 cols) */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="col-span-1 lg:col-span-2 space-y-4 min-w-0">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#A9A69F]">
               Navigation
             </div>
@@ -89,7 +110,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 — Services (3 cols) */}
-          <div className="lg:col-span-3 space-y-4">
+          <div className="col-span-1 lg:col-span-3 space-y-4 min-w-0">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#A9A69F]">
               Services
             </div>
@@ -128,7 +149,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4 — Newsletter (3 cols) */}
-          <div className="lg:col-span-3 space-y-4">
+          <div className="col-span-2 lg:col-span-3 space-y-4 rounded-2xl border border-white/10 bg-[#1C1A18] p-5 sm:p-6 lg:p-0 lg:border-0 lg:bg-transparent">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#A9A69F]">
               Newsletter
             </div>
@@ -165,12 +186,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar: Copyright & Legal */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#8A8780]">
-          <div>
+        <div className="pt-7 sm:pt-8 flex flex-col lg:flex-row lg:items-center justify-between gap-5 text-xs text-[#8A8780]">
+          <div className="max-w-2xl leading-relaxed text-center sm:text-left">
             © {new Date().getFullYear()} Adnan Habib. All rights reserved. Registered Technology Representative Dubai.
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="w-full lg:w-auto flex flex-wrap items-center justify-center sm:justify-start lg:justify-end gap-x-5 gap-y-3">
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
@@ -179,7 +200,7 @@ export default function Footer() {
             </a>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer text-xs"
+              className="inline-flex items-center gap-1.5 text-[#C59A62] hover:text-white transition-colors cursor-pointer text-xs"
             >
               <span>Back to top</span>
               <ArrowUp className="w-3.5 h-3.5 text-[#C59A62]" />

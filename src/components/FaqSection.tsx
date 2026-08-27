@@ -12,7 +12,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-[#F7F6F2] border-b border-[#DDDAD2]">
+    <section id="faq" className="section-dark py-20 md:py-28 bg-[#141413] border-b border-white/10">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           

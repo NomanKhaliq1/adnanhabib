@@ -89,12 +89,11 @@ export default function CaseStudiesSection() {
   return (
     <section
       id="portfolio"
-      className="py-24 md:py-32 bg-[#FAF8F5] text-[#141413] relative border-b border-[#E6E2D8] overflow-hidden"
+      className="section-dark py-24 md:py-32 bg-[#141413] text-white relative border-b border-white/10 overflow-hidden"
     >
       {/* Ambient Lighting */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#C59A62]/8 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-[#A8783E]/6 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(#DDD8CE_1px,transparent_1px)] [background-size:28px_28px] opacity-35 pointer-events-none" />
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         

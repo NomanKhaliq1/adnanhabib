@@ -26,7 +26,6 @@ export default function BiographySection() {
       {/* Luxury Warm Ambient Lighting */}
       <div className="absolute top-20 -left-32 w-[600px] h-[600px] bg-[#C59A62]/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#A8783E]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(#DDD8CE_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

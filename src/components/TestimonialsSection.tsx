@@ -16,13 +16,13 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-24 md:py-36 bg-[#141413] text-white border-b border-[#292524] relative">
+    <section className="py-20 md:py-36 bg-[#141413] text-white border-b border-[#292524] relative overflow-hidden">
       {/* Ambient Lighting Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#C59A62]/10 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#292524_1px,transparent_1px),linear-gradient(to_bottom,#292524_1px,transparent_1px)] bg-[size:48px_48px] opacity-25 pointer-events-none" />
 
       {/* Standard Content Container for Section Heading */}
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 mb-10 md:mb-16 relative z-10">
         <div className="max-w-3xl space-y-3">
           <div className="inline-flex items-center gap-2 bg-[#24201D] border border-[#3E3835] text-[#C59A62] text-xs font-mono font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-[#C59A62]" />
@@ -37,8 +37,60 @@ export default function TestimonialsSection() {
         </div>
       </div>
 
-      {/* Full-Width Seamless Infinite Loop Carousel (overflow-hidden removed) */}
-      <div className="w-full relative py-4 select-none z-10">
+      {/* Mobile: native touch carousel with one readable card per viewport */}
+      <div className="md:hidden relative z-10">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-4 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {testimonials.map((t, idx) => (
+            <article
+              key={`${t.name}-${idx}`}
+              className="w-[calc(100%-2rem)] max-w-[390px] shrink-0 snap-center bg-[#1C1A18]/95 p-5 rounded-2xl border border-[#3E3835] flex flex-col justify-between gap-6 shadow-[0_16px_40px_rgba(0,0,0,0.38)]"
+            >
+              <div className="space-y-5">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex items-center gap-1">
+                    {[...Array(t.stars)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-3.5 h-3.5 fill-[#C59A62] text-[#C59A62]"
+                      />
+                    ))}
+                  </div>
+                  <div className="inline-flex items-center gap-1 text-[9px] font-bold text-[#10B981] bg-[#10B981]/10 px-2 py-1 rounded-full border border-[#10B981]/20">
+                    <CheckCircle2 className="w-3 h-3" />
+                    <span>VERIFIED CLIENT</span>
+                  </div>
+                </div>
+
+                <blockquote className="text-sm text-[#E6E2D8] leading-relaxed">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+              </div>
+
+              <div className="pt-4 border-t border-[#2E2B28] flex items-end justify-between gap-4">
+                <div className="min-w-0">
+                  <div className="text-base font-bold text-white leading-snug">
+                    {t.name}
+                  </div>
+                  <div className="mt-1 text-xs text-[#A9A69F] leading-relaxed">
+                    {t.role} <span className="text-[#787570]">•</span>{" "}
+                    <span className="text-[#C59A62] font-semibold">{t.company}</span>
+                  </div>
+                </div>
+                <Quote className="w-6 h-6 text-[#C59A62]/25 shrink-0" />
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="flex items-center justify-center gap-2 mt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#787570]">
+          <span className="w-6 h-px bg-[#C59A62]/60" />
+          Swipe to explore
+          <span className="w-6 h-px bg-[#C59A62]/60" />
+        </div>
+      </div>
+
+      {/* Desktop: full-width seamless infinite loop */}
+      <div className="hidden md:block w-full relative py-4 select-none z-10 overflow-hidden">
         {/* Left & Right Subtle Soft Edge Fades */}
         <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-r from-[#141413] via-[#141413]/80 to-transparent z-20 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-l from-[#141413] via-[#141413]/80 to-transparent z-20 pointer-events-none" />

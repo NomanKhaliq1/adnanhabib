@@ -60,7 +60,6 @@ export default function IndustryExperienceSection() {
       {/* Ambient Glow */}
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#C59A62]/6 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-[#A8783E]/6 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(#DDD8CE_1px,transparent_1px)] [background-size:24px_24px] opacity-35 pointer-events-none" />
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
         

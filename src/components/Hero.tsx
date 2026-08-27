@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#F7F6F2] overflow-hidden">
+    <section id="top" className="section-dark relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#141413] overflow-hidden">
       {/* Subtle Luxury Ambient Glow & Hairline Background Accents */}
       <div className="absolute top-1/4 right-10 w-96 h-96 bg-[#F1E7D8] rounded-full blur-3xl opacity-70 pointer-events-none" />
       <div className="absolute bottom-10 left-1/3 w-80 h-80 bg-[#EEE9DF] rounded-full blur-3xl opacity-60 pointer-events-none" />
@@ -51,15 +51,15 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2.5 bg-[#171717] hover:bg-[#333333] text-white text-sm sm:text-base font-semibold px-8 py-4 rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2.5 bg-[#C59A62] hover:bg-[#D0A66D] text-[#141413] text-sm sm:text-base font-bold px-8 py-4 rounded-full border border-[#D8B47D] transition-all shadow-[0_12px_30px_rgba(197,154,98,0.18)] hover:shadow-[0_16px_36px_rgba(197,154,98,0.28)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <span>Book a Free Consultation</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 bg-[#FFFFFF] hover:bg-[#EEE9DF] text-[#171717] text-sm sm:text-base font-semibold px-7 py-4 rounded-full border border-[#DDDAD2] transition-all hover:border-[#171717]"
+                className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white text-sm sm:text-base font-semibold px-7 py-4 rounded-full border border-white/20 transition-all hover:border-[#C59A62]/70 hover:text-[#E8C58C]"
               >
                 <span>Explore Services</span>
               </a>

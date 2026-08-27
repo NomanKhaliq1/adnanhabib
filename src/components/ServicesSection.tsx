@@ -53,12 +53,11 @@ export default function ServicesSection() {
       : PORTFOLIO_DATA.services.filter((s) => s.id === activeCategory);
 
   return (
-    <section id="services" className="py-28 md:py-36 bg-[#FAF8F5] text-[#141413] relative border-b border-[#E6E2D8] overflow-hidden">
+    <section id="services" className="section-dark py-28 md:py-36 bg-[#141413] text-white relative border-b border-white/10 overflow-hidden">
       
       {/* Ambient Luxury Background Lights */}
       <div className="absolute top-10 left-1/3 w-[600px] h-[600px] bg-[#C59A62]/8 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-[#A8783E]/6 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(#DDD8CE_1px,transparent_1px)] [background-size:28px_28px] opacity-35 pointer-events-none" />
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         

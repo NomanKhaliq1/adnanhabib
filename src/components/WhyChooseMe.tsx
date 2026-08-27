@@ -363,10 +363,10 @@ export default function WhyChooseMe() {
   };
 
   return (
-    <section className="py-24 md:py-36 bg-[#FAF7F2] text-[#141413] relative border-b border-[#E6E2D8]">
+    <section className="section-dark py-24 md:py-36 bg-[#141413] text-white relative border-b border-white/10 overflow-hidden">
       {/* Ambient Lighting & Grid */}
       <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-[#C59A62]/8 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#EAE5DC_1px,transparent_1px),linear-gradient(to_bottom,#EAE5DC_1px,transparent_1px)] bg-[size:48px_48px] opacity-70 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#2A2725_1px,transparent_1px),linear-gradient(to_bottom,#2A2725_1px,transparent_1px)] bg-[size:48px_48px] opacity-70 pointer-events-none" />
 
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-14">
         
@@ -388,10 +388,10 @@ export default function WhyChooseMe() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start relative">
           
           {/* Left Column (5 cols): PINNED VISUAL LENS (Deterministic Real-Time Sync) */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start space-y-4 z-20">
+          <div className="min-w-0 lg:col-span-5 lg:sticky lg:top-28 self-start space-y-4 z-20">
             
             {/* Interactive Obsidian Visual Terminal Lens Box */}
-            <div className="bg-[#181615] rounded-[28px] border border-[#3E3835] shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden p-6 space-y-5">
+            <div className="w-full min-w-0 bg-[#181615] rounded-[22px] sm:rounded-[28px] border border-[#3E3835] shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden p-4 sm:p-6 space-y-5">
               
               {/* Terminal Window Header */}
               <div className="flex items-center justify-between border-b border-[#292524] pb-3.5">

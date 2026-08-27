@@ -32,10 +32,84 @@ export default function CareerTimeline() {
   return (
     <section
       ref={containerRef}
-      className="relative h-[360vh] bg-[#141413] text-[#FFFFFF] w-full border-b border-[#292524]"
+      className="relative bg-[#141413] text-[#FFFFFF] w-full border-b border-[#292524] lg:h-[360vh]"
     >
+      {/* Mobile / Tablet: natural vertical journey without a pinned canvas */}
+      <div className="lg:hidden relative px-4 sm:px-6 py-20 sm:py-24 overflow-hidden">
+        <div className="absolute top-24 -right-32 w-80 h-80 bg-[#A8783E]/10 rounded-full blur-[110px] pointer-events-none" />
+
+        <div className="max-w-2xl mx-auto relative z-10">
+          <div className="mb-11 sm:mb-14">
+            <div className="inline-flex items-center gap-2 bg-[#24201D] border border-[#3E3835] text-[#C59A62] text-[10px] sm:text-xs font-bold uppercase tracking-[0.14em] px-3.5 py-2 rounded-full">
+              <Compass className="w-3.5 h-3.5" />
+              <span>2012 — Present</span>
+            </div>
+            <h3 className="mt-5 text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              Career Journey
+            </h3>
+            <p className="mt-3 max-w-xl text-sm sm:text-base leading-relaxed text-[#A9A69F]">
+              From hands-on web engineering to technology leadership and on-ground business support in Dubai.
+            </p>
+          </div>
+
+          <div className="relative ml-3 sm:ml-4">
+            <div className="absolute left-0 top-2 bottom-5 w-px bg-gradient-to-b from-[#C59A62] via-[#A8783E]/70 to-[#C59A62]/20" />
+
+            <div className="space-y-7 sm:space-y-9">
+              {PORTFOLIO_DATA.timeline.map((item, idx) => {
+                const isCurrent = item.year.includes("Present");
+
+                return (
+                  <article key={item.year} className="relative pl-8 sm:pl-10">
+                    <div
+                      className={`absolute -left-[7px] top-1.5 w-[15px] h-[15px] rounded-full border-2 ${
+                        isCurrent
+                          ? "bg-[#C59A62] border-white shadow-[0_0_16px_rgba(197,154,98,0.8)]"
+                          : "bg-[#141413] border-[#C59A62]"
+                      }`}
+                    >
+                      <span className="absolute inset-[3px] rounded-full bg-white" />
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3">
+                      <span className="text-xl sm:text-2xl font-bold text-[#E8C58C] tracking-tight">
+                        {item.year}
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#787570]">
+                        {isCurrent ? "Current chapter" : `Phase ${String(idx + 1).padStart(2, "0")}`}
+                      </span>
+                    </div>
+
+                    <div
+                      className={`rounded-2xl border p-5 sm:p-6 ${
+                        isCurrent
+                          ? "bg-gradient-to-br from-[#24201D] to-[#1C1A18] border-[#C59A62]/80 shadow-[0_18px_45px_rgba(0,0,0,0.28)]"
+                          : "bg-[#181615] border-[#292524]"
+                      }`}
+                    >
+                      <h4 className="text-base sm:text-lg font-bold text-white leading-snug">
+                        {item.title}
+                      </h4>
+                      <p className="mt-2 text-sm text-[#A9A69F] leading-relaxed">
+                        {item.description}
+                      </p>
+                      {isCurrent && (
+                        <div className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#C59A62]">
+                          <ShieldCheck className="w-4 h-4" />
+                          Active milestone
+                        </div>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Pinned Sticky Viewport Window */}
-      <div className="sticky top-0 h-screen w-full flex flex-col justify-between pt-24 sm:pt-28 pb-8 overflow-hidden select-none">
+      <div className="hidden lg:flex sticky top-0 h-screen w-full flex-col justify-between pt-28 pb-8 overflow-hidden select-none">
         
         {/* Subtle Ambient Spotlight Glow */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#A8783E]/8 rounded-full blur-[140px] pointer-events-none" />
