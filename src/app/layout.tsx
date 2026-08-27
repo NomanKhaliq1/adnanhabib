@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Manrope, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap"
 });
 
@@ -88,7 +88,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${instrumentSerif.variable} h-full antialiased scroll-smooth`}
+      className={`${manrope.variable} ${instrumentSerif.variable} h-full antialiased scroll-smooth`}
     >
       <head>
         <script
