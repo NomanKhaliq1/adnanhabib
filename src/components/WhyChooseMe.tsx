@@ -363,7 +363,7 @@ export default function WhyChooseMe() {
   };
 
   return (
-    <section className="section-dark py-24 md:py-36 bg-[#141413] text-white relative border-b border-white/10 overflow-hidden">
+    <section className="section-dark py-24 md:py-36 bg-[#141413] text-white relative border-b border-white/10 overflow-x-clip">
       {/* Ambient Lighting & Grid */}
       <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-[#C59A62]/8 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#2A2725_1px,transparent_1px),linear-gradient(to_bottom,#2A2725_1px,transparent_1px)] bg-[size:48px_48px] opacity-70 pointer-events-none" />
