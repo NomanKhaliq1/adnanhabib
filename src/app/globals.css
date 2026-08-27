@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-page: #F7F6F2;
+    --bg-surface: #FFFFFF;
+    --bg-soft-beige: #EEE9DF;
+    --text-primary: #171717;
+    --text-secondary: #66645F;
+    --text-muted: #8A8780;
+    --border-subtle: #DDDAD2;
+    --accent-bronze: #A8783E;
+    --accent-soft: #F1E7D8;
+    --bg-dark-feature: #1B1B1A;
+    --bg-footer: #171717;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  /* Custom Editorial Serif Class for strictly permitted accent lines */
+  .font-editorial {
+    font-family: var(--font-instrument), Georgia, serif;
+  }
+
+  /* Clean Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F7F6F2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #DDDAD2;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A8783E;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Subtle 1px Bordered Card as specified in Section 6 */
+.spec-card {
+  background-color: #FFFFFF;
+  border: 1px solid #DDDAD2;
+  border-radius: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.spec-card:hover {
+  border-color: #C8C5BE;
+  box-shadow: 0 14px 40px rgba(20, 20, 20, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Soft Beige Card Container */
+.spec-card-beige {
+  background-color: #EEE9DF;
+  border: 1px solid #DDDAD2;
+  border-radius: 16px;
+}
+
+/* Dark Feature Container */
+.spec-card-dark {
+  background-color: #1B1B1A;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+/* Standard Spec Button Radii */
+.btn-pill {
+  border-radius: 999px;
+}
+
+.btn-rounded {
+  border-radius: 10px;
+}
+
+/* Seamless Continuous Marquee Animation */
+@keyframes marqueeSeamless {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.animate-testimonial-marquee {
+  display: flex;
+  flex-shrink: 0;
+  animation: marqueeSeamless 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-testimonial-marquee:hover {
+  animation-play-state: paused;
 }
